@@ -1,4 +1,4 @@
-package co.zecko.retailer.common;
+package co.zecko.retailer.client.pojo;
 
 import java.math.BigDecimal;
 

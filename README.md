@@ -1,3 +1,3 @@
-# zecko common
-Common POJOs for zecko client
+# zecko client
+Java Client for Zecko
 
