@@ -1,9 +1,11 @@
 package co.zecko.retailer.common.util;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class DiscountUtil {
 
     public static String getDiscountPercentage(String price, String compareAtPrice) {
-        if (price == null || compareAtPrice == null) {
+        if (StringUtils.isEmpty(price) || StringUtils.isEmpty(compareAtPrice)) {
             return null;
         }
 
