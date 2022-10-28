@@ -17,7 +17,7 @@ import org.apache.commons.lang3.StringUtils;
 public class CollectionClient extends BaseClient {
 
     static final String BASE_URI = "/retailer/v1/collections";
-    public String zeckoAccessToken;
+    String zeckoAccessToken;
     public CollectionClient(String zeckoAccessToken) {
         this.zeckoAccessToken = zeckoAccessToken;
     }
