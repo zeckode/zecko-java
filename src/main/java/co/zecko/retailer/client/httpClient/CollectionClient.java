@@ -14,11 +14,15 @@ import lombok.experimental.FieldDefaults;
 import org.apache.commons.lang3.StringUtils;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ZeckoCollectionClient extends BaseClient {
+public class CollectionClient extends BaseClient {
 
     static final String BASE_URI = "/retailer/v1/collections";
+    public String zeckoAccessToken;
+    public CollectionClient(String zeckoAccessToken) {
+        this.zeckoAccessToken = zeckoAccessToken;
+    }
 
-    public CollectionsData findAll(String after, String before, String zeckoAccessToken)
+    public CollectionsData findAll(String after, String before)
         throws BaseException, IOException, InterruptedException {
 
         zeckoAccessToken = getZeckoAccessToken(zeckoAccessToken);
