@@ -3,6 +3,7 @@ package co.zecko.retailer.client.httpClient;
 import static co.zecko.retailer.common.constant.Header.AFTER_HEADER;
 import static co.zecko.retailer.common.constant.Header.BEFORE_HEADER;
 
+import co.zecko.retailer.common.enums.HttpStatus;
 import co.zecko.retailer.common.pojo.collection.CollectionData;
 import co.zecko.retailer.common.pojo.collection.CollectionsData;
 import co.zecko.retailer.exception.BaseException;
@@ -50,9 +51,12 @@ public class CollectionClient extends BaseClient {
         Map<String, String> queryParams = new HashMap<>();
         String routeUri = "";
 
-        if (!StringUtils.isEmpty(id)) {
-            routeUri += "/" + id;
+        if (StringUtils.isEmpty(id)) {
+            String message = "Collection ID can not be empty";
+            throw new BaseException(message, HttpStatus.BAD_REQUEST);
         }
+
+        routeUri = String.format("/%s", id);
 
         String url = getUrl(BASE_URI + routeUri);
 
