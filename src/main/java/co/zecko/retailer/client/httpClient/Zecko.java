@@ -9,7 +9,10 @@ import lombok.experimental.FieldDefaults;
 public class Zecko {
     public final CollectionClient collectionClient;
 
+    public final ProductClient productClient;
+
     public Zecko(String zeckoAccessToken) {
         this.collectionClient = new CollectionClient(zeckoAccessToken);
+        this.productClient = new ProductClient(zeckoAccessToken);
     }
 }

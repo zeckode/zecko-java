@@ -4,6 +4,7 @@ import co.zecko.retailer.common.enums.ProductStatus;
 import co.zecko.retailer.common.pojo.image.Image;
 import co.zecko.retailer.common.pojo.image.ImageEdges;
 import co.zecko.retailer.common.pojo.metaField.MetaFieldEdges;
+import co.zecko.retailer.common.pojo.platform.Platform;
 import co.zecko.retailer.common.pojo.price.PriceRange;
 import co.zecko.retailer.common.pojo.variant.VariantEdges;
 import co.zecko.retailer.common.util.DiscountUtil;
@@ -12,7 +13,6 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;
 import java.util.List;
 
-import javafx.application.Platform;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
