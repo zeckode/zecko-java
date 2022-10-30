@@ -1,6 +1,8 @@
 package co.zecko.retailer.client.httpClient;
 
 import co.zecko.retailer.common.enums.HttpStatus;
+import co.zecko.retailer.common.pojo.collection.CollectionData;
+import co.zecko.retailer.common.pojo.product.ProductData;
 import co.zecko.retailer.common.pojo.product.ShopifyProductsData;
 import co.zecko.retailer.exception.BaseException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -43,6 +45,41 @@ public class ProductClient extends BaseClient {
             queryParams.put(BEFORE_HEADER, before);
         }
         queryParams.put("collectionId",collectionId);
+        return get(url, queryParams, headers, new TypeReference<>() {});
+    }
+    public ProductData findById(String id, String imagesBefore, String imagesAfter, String variantsBefore, String variantsAfter,String metaFieldsBefore, String metaFieldsAfter)
+            throws BaseException, IOException, InterruptedException{
+        zeckoAccessToken = getZeckoAccessToken(zeckoAccessToken);
+        Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
+        Map<String, String> queryParams = new HashMap<>();
+        String routeUri = "";
+
+        if (StringUtils.isEmpty(id)) {
+            String message = "Product ID can not be empty";
+            throw new BaseException(message, HttpStatus.BAD_REQUEST);
+        }
+        if (!StringUtils.isEmpty(imagesBefore)) {
+            queryParams.put("imageBefore", imagesBefore);
+        }
+        if (!StringUtils.isEmpty(imagesAfter)) {
+            queryParams.put("imagesAfter", imagesAfter);
+        }
+        if (!StringUtils.isEmpty(variantsBefore)) {
+            queryParams.put("variantsBefore", variantsBefore);
+        }
+        if (!StringUtils.isEmpty(variantsAfter)) {
+            queryParams.put("variantsAfter", variantsAfter);
+        }
+        if (!StringUtils.isEmpty(metaFieldsBefore)) {
+            queryParams.put("metaFieldsBefore", metaFieldsBefore);
+        }
+        if (!StringUtils.isEmpty(metaFieldsAfter)) {
+            queryParams.put("metaFieldsAfter", metaFieldsAfter);
+        }
+        routeUri = String.format("/%s", id);
+
+        String url = getUrl(BASE_URI + routeUri);
+
         return get(url, queryParams, headers, new TypeReference<>() {});
     }
 }
