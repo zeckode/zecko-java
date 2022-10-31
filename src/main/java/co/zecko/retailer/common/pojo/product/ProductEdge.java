@@ -1,4 +1,5 @@
 package co.zecko.retailer.common.pojo.product;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;

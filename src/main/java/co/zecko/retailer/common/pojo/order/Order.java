@@ -1,25 +1,30 @@
 package co.zecko.retailer.common.pojo.order;
 
-import co.zecko.retailer.common.pojo.Taxline;
 import co.zecko.retailer.common.pojo.address.Address;
-import co.zecko.retailer.common.pojo.lineItem.LineItemEdges;
-import co.zecko.retailer.common.pojo.money.MoneyBag;
-import co.zecko.retailer.common.pojo.money.Refund;
 import co.zecko.retailer.common.pojo.shipping.ShippingLine;
+import co.zecko.retailer.common.pojo.money.MoneyBag;
+import co.zecko.retailer.common.pojo.Taxline;
+import co.zecko.retailer.common.pojo.lineItem.LineItemEdges;
+import co.zecko.retailer.common.pojo.money.Refund;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.*;
-import lombok.experimental.FieldDefaults;
-
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.FieldDefaults;
 
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Order implements Serializable {
 

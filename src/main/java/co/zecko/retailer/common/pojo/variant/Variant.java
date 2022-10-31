@@ -1,24 +1,29 @@
 package co.zecko.retailer.common.pojo.variant;
 
-
 import co.zecko.retailer.common.pojo.SelectedOption;
 import co.zecko.retailer.common.pojo.image.Image;
 import co.zecko.retailer.common.pojo.product.Product;
 import co.zecko.retailer.common.util.DiscountUtil;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.*;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import java.io.Serializable;
+import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 import org.apache.commons.lang3.ObjectUtils;
 
-import java.io.Serializable;
-import java.util.List;
 
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Variant implements Serializable {
 

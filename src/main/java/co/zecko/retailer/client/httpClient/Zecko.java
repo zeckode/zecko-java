@@ -11,8 +11,14 @@ public class Zecko {
 
     public final ProductClient productClient;
 
+    public final CartClient cartClient;
+
+    public final OrderClient orderClient;
+
     public Zecko(String zeckoAccessToken) {
         this.collectionClient = new CollectionClient(zeckoAccessToken);
         this.productClient = new ProductClient(zeckoAccessToken);
+        this.cartClient = new CartClient(zeckoAccessToken);
+        this.orderClient = new OrderClient(zeckoAccessToken);
     }
 }

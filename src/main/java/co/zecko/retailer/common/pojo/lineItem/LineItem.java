@@ -1,17 +1,21 @@
 package co.zecko.retailer.common.pojo.lineItem;
 
 import co.zecko.retailer.common.pojo.Discount;
-import co.zecko.retailer.common.pojo.Taxline;
 import co.zecko.retailer.common.pojo.image.Image;
 import co.zecko.retailer.common.pojo.inventoryUnit.InventoryUnitResponse;
 import co.zecko.retailer.common.pojo.product.Product;
+import co.zecko.retailer.common.pojo.Taxline;
 import co.zecko.retailer.common.pojo.variant.Variant;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.*;
-import lombok.experimental.FieldDefaults;
-
 import java.io.Serializable;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.FieldDefaults;
 
 @Getter
 @Setter

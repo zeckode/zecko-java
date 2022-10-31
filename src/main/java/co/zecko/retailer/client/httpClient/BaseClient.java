@@ -64,13 +64,32 @@ public abstract class BaseClient {
         Map<String, String> headers, TypeReference<ResponseBody> responseType)
         throws IOException, InterruptedException {
 
+        headers.put("Content-Type","application/json");
         String requestBodyString = objectMapper.writeValueAsString(requestBody);
         HttpRequest httpRequest = getBaseRequest(url, headers).POST(
             BodyPublishers.ofString(requestBodyString)).build();
 
         return request(httpRequest, responseType);
     }
+    public <RequestBody, ResponseBody> ResponseBody patch(String url, RequestBody requestBody,
+        Map<String, String> headers, TypeReference<ResponseBody> responseType)
+        throws IOException, InterruptedException {
 
+        headers.put("Content-Type","application/json");
+        String requestBodyString = objectMapper.writeValueAsString(requestBody);
+        HttpRequest httpRequest = getBaseRequest(url, headers).method("PATCH",
+            BodyPublishers.ofString(requestBodyString)).build();
+
+        return request(httpRequest, responseType);
+    }
+    public <ResponseBody> ResponseBody delete(String url, Map<String, String> queryParams,
+                                           Map<String, String> headers, TypeReference<ResponseBody> responseType)
+            throws IOException, InterruptedException {
+
+        String queryAppendedUrl = getQueryAppendedUrl(url, queryParams);
+        HttpRequest httpRequest = getBaseRequest(queryAppendedUrl, headers).DELETE().build();
+        return request(httpRequest, responseType);
+    }
     public String getZeckoAccessToken(String zeckoAccessToken) throws BaseException {
         if (StringUtils.isEmpty(zeckoAccessToken)) {
             zeckoAccessToken = System.getenv(ZECKO_ACCESS_TOKEN_HEADER);

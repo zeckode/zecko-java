@@ -1,6 +1,7 @@
 package co.zecko.retailer.common.pojo.product;
 
 import co.zecko.retailer.common.pojo.base.BaseEntry;
+import co.zecko.retailer.common.pojo.product.ProductEdgesWrapper;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;
