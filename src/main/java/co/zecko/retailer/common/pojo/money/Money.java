@@ -1,6 +1,7 @@
 package co.zecko.retailer.common.pojo.money;
 
 import co.zecko.retailer.common.enums.CurrencyCode;
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;
@@ -19,7 +20,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Money implements Serializable  {
+public class Money extends BaseEntry implements Serializable  {
 
     private static final long serialVersionUID = -8145191057962062326L;
 

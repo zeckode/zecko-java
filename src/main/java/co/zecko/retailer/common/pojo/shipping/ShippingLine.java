@@ -1,5 +1,6 @@
 package co.zecko.retailer.common.pojo.shipping;
 
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -16,7 +17,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ShippingLine {
+public class ShippingLine extends BaseEntry {
 
     private static final long serialVersionUID = 8655528852604585746L;
 

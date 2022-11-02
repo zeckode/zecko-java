@@ -1,5 +1,6 @@
 package co.zecko.retailer.common.pojo;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,6 +14,7 @@ import java.util.Date;
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @ToString
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public abstract class AbstractEntry<ID extends Serializable> implements Serializable {
 
 

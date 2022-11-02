@@ -1,5 +1,6 @@
 package co.zecko.retailer.common.pojo.money;
 
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import lombok.AccessLevel;
@@ -17,7 +18,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class MoneyBag {
+public class MoneyBag extends BaseEntry {
 
     private static final long serialVersionUID = 4667312934910682620L;
 

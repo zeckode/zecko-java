@@ -1,9 +1,8 @@
 package co.zecko.retailer.client.httpClient;
 
 import co.zecko.retailer.common.enums.HttpStatus;
-import co.zecko.retailer.common.pojo.collection.CollectionData;
 import co.zecko.retailer.common.pojo.product.ProductData;
-import co.zecko.retailer.common.pojo.product.ShopifyProductsData;
+import co.zecko.retailer.common.pojo.product.ProductsData;
 import co.zecko.retailer.exception.BaseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import lombok.AccessLevel;
@@ -25,7 +24,7 @@ public class ProductClient extends BaseClient {
     public ProductClient(String zeckoAccessToken) {
         this.zeckoAccessToken = zeckoAccessToken;
     }
-    public ShopifyProductsData findAll(String collectionId, String after, String before)
+    public ProductsData findAll(String collectionId, String after, String before)
             throws BaseException, IOException, InterruptedException {
 
         zeckoAccessToken = getZeckoAccessToken(zeckoAccessToken);

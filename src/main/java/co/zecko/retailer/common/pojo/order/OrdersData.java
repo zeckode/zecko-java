@@ -1,5 +1,6 @@
 package co.zecko.retailer.common.pojo.order;
 
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;
@@ -18,7 +19,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class OrdersData implements Serializable {
+public class OrdersData extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = -7654807291809597669L;
 

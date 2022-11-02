@@ -5,6 +5,7 @@ import co.zecko.retailer.common.enums.DraftOrderStatus;
 import co.zecko.retailer.common.pojo.Discount;
 import co.zecko.retailer.common.pojo.Taxline;
 import co.zecko.retailer.common.pojo.address.Address;
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import co.zecko.retailer.common.pojo.lineItem.LineItemEdges;
 import co.zecko.retailer.common.pojo.order.Order;
 import co.zecko.retailer.common.pojo.shipping.AvailableShippingRate;
@@ -27,7 +28,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Cart {
+public class Cart extends BaseEntry {
 
     private static final long serialVersionUID = 8300943293454033597L;
 

@@ -1,6 +1,7 @@
 package co.zecko.retailer.common.pojo.discount;
 
 import co.zecko.retailer.common.enums.DiscountType;
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -14,7 +15,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class DiscountInput implements Serializable {
+public class DiscountInput extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = 76044956019468599L;
 

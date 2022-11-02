@@ -1,6 +1,7 @@
 package co.zecko.retailer.common.pojo.variant;
 
 import co.zecko.retailer.common.pojo.SelectedOption;
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import co.zecko.retailer.common.pojo.image.Image;
 import co.zecko.retailer.common.pojo.product.Product;
 import co.zecko.retailer.common.util.DiscountUtil;
@@ -25,7 +26,7 @@ import org.apache.commons.lang3.ObjectUtils;
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Variant implements Serializable {
+public class Variant extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = 4504096969213459970L;
 

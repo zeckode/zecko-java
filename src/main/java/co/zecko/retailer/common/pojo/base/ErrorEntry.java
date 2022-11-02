@@ -18,7 +18,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ShopifyErrorEntry implements Serializable {
+public class ErrorEntry implements Serializable {
 
     private static final long serialVersionUID = -8307940712006208211L;
 

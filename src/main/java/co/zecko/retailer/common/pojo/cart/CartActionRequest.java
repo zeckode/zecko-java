@@ -1,5 +1,6 @@
 package co.zecko.retailer.common.pojo.cart;
 
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
 import lombok.AccessLevel;
@@ -17,7 +18,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CartActionRequest implements Serializable {
+public class CartActionRequest extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = -5086294457533804708L;
 

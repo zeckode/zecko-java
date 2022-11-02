@@ -3,6 +3,7 @@ package co.zecko.retailer.common.pojo.base;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -19,5 +20,9 @@ public abstract class BaseEntry implements Serializable {
 
     private static final long serialVersionUID = 1166608276332260653L;
 
-    List<ShopifyErrorEntry> errors;
+    List<ErrorEntry> errors;
+
+    String message;
+
+    Date timestamp;
 }

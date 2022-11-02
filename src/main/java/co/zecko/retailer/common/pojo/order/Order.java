@@ -1,6 +1,7 @@
 package co.zecko.retailer.common.pojo.order;
 
 import co.zecko.retailer.common.pojo.address.Address;
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import co.zecko.retailer.common.pojo.shipping.ShippingLine;
 import co.zecko.retailer.common.pojo.money.MoneyBag;
 import co.zecko.retailer.common.pojo.Taxline;
@@ -26,7 +27,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Order implements Serializable {
+public class Order extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = -4121389534433508498L;
 

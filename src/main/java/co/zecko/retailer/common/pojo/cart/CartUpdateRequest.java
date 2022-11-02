@@ -1,6 +1,7 @@
 package co.zecko.retailer.common.pojo.cart;
 
 import co.zecko.retailer.common.pojo.address.AddressInput;
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import co.zecko.retailer.common.pojo.customer.Customer;
 import co.zecko.retailer.common.pojo.shipping.AvailableShippingRate;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -20,7 +21,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CartUpdateRequest implements Serializable {
+public class CartUpdateRequest extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = -8719091670207245964L;
 

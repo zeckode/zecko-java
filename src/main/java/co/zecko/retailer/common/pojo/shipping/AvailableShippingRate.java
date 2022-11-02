@@ -1,5 +1,6 @@
 package co.zecko.retailer.common.pojo.shipping;
 
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import co.zecko.retailer.common.pojo.money.Money;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
@@ -18,7 +19,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class AvailableShippingRate implements Serializable {
+public class AvailableShippingRate extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = -4662268099908092687L;
 

@@ -1,5 +1,7 @@
 package co.zecko.retailer.common.pojo.InventoryUnitHistory;
 
+import co.zecko.retailer.common.pojo.base.BaseDataBaseEntry;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -12,7 +14,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class InventoryUnitHistoryWrapper implements Serializable {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class InventoryUnitHistoryWrapper extends BaseDataBaseEntry implements Serializable {
 
     private static final long serialVersionUID = -442616495729170935L;
 

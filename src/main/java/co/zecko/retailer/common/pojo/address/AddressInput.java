@@ -1,6 +1,7 @@
 package co.zecko.retailer.common.pojo.address;
 
 import co.zecko.retailer.common.enums.CountryCode;
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;
@@ -20,7 +21,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class AddressInput implements Serializable {
+public class AddressInput extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = -6508043866447760439L;
 

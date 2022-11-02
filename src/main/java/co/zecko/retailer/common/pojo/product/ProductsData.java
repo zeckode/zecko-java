@@ -20,7 +20,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ShopifyProductsData extends BaseEntry implements Serializable {
+public class ProductsData extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = 303529459065634177L;
 

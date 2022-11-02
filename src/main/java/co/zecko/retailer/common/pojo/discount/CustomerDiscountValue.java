@@ -1,6 +1,7 @@
 package co.zecko.retailer.common.pojo.discount;
 
 import co.zecko.retailer.common.enums.CustomerDiscountValueType;
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -19,7 +20,7 @@ import java.io.Serializable;
 @JsonTypeInfo(use = Id.NAME, property = "__typename", visible = true)
 @JsonSubTypes({@JsonSubTypes.Type(value = DiscountPercentage.class, name = "DiscountPercentage")})
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public abstract class CustomerDiscountValue implements Serializable {
+public abstract class CustomerDiscountValue extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = -1961148040375930784L;
 

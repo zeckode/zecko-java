@@ -1,5 +1,6 @@
 package co.zecko.retailer.common.pojo;
 
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import co.zecko.retailer.common.pojo.money.MoneyBag;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -19,7 +20,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Taxline implements Serializable {
+public class Taxline extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = -6402703595911538833L;
 

@@ -1,6 +1,7 @@
 package co.zecko.retailer.common.pojo.lineItem;
 
 import co.zecko.retailer.common.pojo.Discount;
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import co.zecko.retailer.common.pojo.image.Image;
 import co.zecko.retailer.common.pojo.inventoryUnit.InventoryUnitResponse;
 import co.zecko.retailer.common.pojo.product.Product;
@@ -24,7 +25,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class LineItem implements Serializable {
+public class LineItem extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = 444002611340855727L;
 

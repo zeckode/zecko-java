@@ -1,5 +1,6 @@
 package co.zecko.retailer.common.pojo.price;
 
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import co.zecko.retailer.common.pojo.money.Money;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -19,7 +20,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class PriceRange implements Serializable {
+public class PriceRange extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = 2600442786028355974L;
 

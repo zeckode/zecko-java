@@ -1,6 +1,7 @@
 package co.zecko.retailer.common.pojo.image;
 
 import co.zecko.retailer.common.pojo.PageInfo;
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;
@@ -20,7 +21,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ImageEdges implements Serializable {
+public class ImageEdges extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = 4991218402925349889L;
 

@@ -1,6 +1,7 @@
 package co.zecko.retailer.common.pojo.discount;
 
 import co.zecko.retailer.common.enums.DiscountCodeNodeType;
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -21,7 +22,7 @@ import lombok.experimental.FieldDefaults;
 @JsonTypeInfo(use = Id.NAME, property = "__typename", visible = true)
 @JsonSubTypes({@JsonSubTypes.Type(value = DiscountCodeBasic.class, name = "DiscountCodeBasic")})
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public abstract class DiscountCodeNode implements Serializable {
+public abstract class DiscountCodeNode extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = -6779969066981019635L;
 

@@ -4,6 +4,7 @@ import co.zecko.retailer.common.enums.InventoryUnitStatus;
 import co.zecko.retailer.common.pojo.base.BaseDataBaseEntry;
 import co.zecko.retailer.common.pojo.base.BaseEntry;
 import co.zecko.retailer.common.pojo.lineItem.LineItem;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -14,6 +15,7 @@ import java.util.Date;
 @ToString
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class InventoryUnitEntry extends BaseDataBaseEntry {
 
     private static final long serialVersionUID = -5952840055117933760L;

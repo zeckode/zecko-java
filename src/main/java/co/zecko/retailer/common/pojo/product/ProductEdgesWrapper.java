@@ -1,5 +1,6 @@
 package co.zecko.retailer.common.pojo.product;
 
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;
@@ -18,7 +19,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ProductEdgesWrapper implements Serializable  {
+public class ProductEdgesWrapper extends BaseEntry implements Serializable  {
 
     private static final long serialVersionUID = -2899624624436259882L;
 

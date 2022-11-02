@@ -1,6 +1,7 @@
 package co.zecko.retailer.common.pojo.product;
 
 import co.zecko.retailer.common.enums.ProductStatus;
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import co.zecko.retailer.common.pojo.image.Image;
 import co.zecko.retailer.common.pojo.image.ImageEdges;
 import co.zecko.retailer.common.pojo.metaField.MetaFieldEdges;
@@ -27,7 +28,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Product implements Serializable {
+public class Product extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = -1878780115434615038L;
 

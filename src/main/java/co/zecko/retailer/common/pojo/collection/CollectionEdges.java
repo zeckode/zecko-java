@@ -1,6 +1,7 @@
 package co.zecko.retailer.common.pojo.collection;
 
 import co.zecko.retailer.common.pojo.PageInfo;
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
 import java.util.List;
@@ -19,7 +20,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CollectionEdges implements Serializable {
+public class CollectionEdges extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = -549827740704428707L;
 

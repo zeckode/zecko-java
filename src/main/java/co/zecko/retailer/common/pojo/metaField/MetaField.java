@@ -1,5 +1,6 @@
 package co.zecko.retailer.common.pojo.metaField;
 
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;
@@ -18,7 +19,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class MetaField implements Serializable {
+public class MetaField extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = -630531775565344354L;
 

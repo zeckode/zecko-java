@@ -1,5 +1,6 @@
 package co.zecko.retailer.common.pojo.cart;
 
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import lombok.AccessLevel;
@@ -17,7 +18,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class DraftOrderCompleteResponseWrapper {
+public class DraftOrderCompleteResponseWrapper extends BaseEntry {
 
     private static final long serialVersionUID = 2051549004907316157L;
 

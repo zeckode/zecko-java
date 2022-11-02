@@ -1,5 +1,6 @@
 package co.zecko.retailer.common.pojo.customer;
 
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
 import java.util.List;
@@ -18,7 +19,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CustomerInput implements Serializable {
+public class CustomerInput extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = 7079889251531447532L;
 

@@ -1,5 +1,6 @@
 package co.zecko.retailer.common.pojo.variant;
 
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
 import lombok.AccessLevel;
@@ -17,7 +18,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class VariantEdge implements Serializable {
+public class VariantEdge extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = -4591734693674795536L;
 

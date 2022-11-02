@@ -1,6 +1,7 @@
 package co.zecko.retailer.common.pojo.media;
 
 import co.zecko.retailer.common.enums.MediaStatus;
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import co.zecko.retailer.common.pojo.image.Image;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -20,7 +21,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class MediaPreview implements Serializable {
+public class MediaPreview extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = -3906099598554618981L;
 

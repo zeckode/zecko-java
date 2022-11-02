@@ -1,5 +1,6 @@
 package co.zecko.retailer.common.pojo.cart;
 
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import co.zecko.retailer.common.pojo.payment.PaymentInfo;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
@@ -18,7 +19,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CartCompleteRequest implements Serializable {
+public class CartCompleteRequest extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = -6436891047426819720L;
 

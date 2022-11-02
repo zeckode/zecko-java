@@ -1,5 +1,6 @@
 package co.zecko.retailer.common.pojo.lineItem;
 
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
 import lombok.AccessLevel;
@@ -17,7 +18,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class LineItemEdge implements Serializable {
+public class LineItemEdge extends BaseEntry implements Serializable {
 
     private static final long serialVersionUID = 8002022434702068095L;
 
