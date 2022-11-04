@@ -1,10 +1,9 @@
 package co.zecko.retailer.client.httpClient;
 
 import co.zecko.retailer.common.enums.HttpStatus;
-import co.zecko.retailer.common.pojo.collection.CollectionData;
 import co.zecko.retailer.common.pojo.order.OrderData;
 import co.zecko.retailer.common.pojo.order.OrdersData;
-import co.zecko.retailer.exception.BaseException;
+import co.zecko.retailer.exception.ZeckoException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
@@ -20,19 +19,18 @@ import static co.zecko.retailer.common.constant.Header.BEFORE_HEADER;
 @FieldDefaults(level = AccessLevel.PACKAGE)
 public class OrderClient extends BaseClient {
     static final String BASE_URI = "/retailer/v1/orders";
-    String zeckoAccessToken;
+    final String zeckoAccessToken;
     public OrderClient(String zeckoAccessToken) {
         this.zeckoAccessToken = zeckoAccessToken;
     }
     public OrdersData findAll(String clientCustomerId, String before, String after)
-        throws BaseException, IOException, InterruptedException {
-        zeckoAccessToken = getZeckoAccessToken(zeckoAccessToken);
+        throws ZeckoException, IOException, InterruptedException {
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
         Map<String, String> queryParams = new HashMap<>();
         String routeUri = "";
         if (StringUtils.isEmpty(clientCustomerId)) {
-            String message = "Customer ID can not be empty";
-            throw new BaseException(message, HttpStatus.BAD_REQUEST);
+            String message = "Missing required parameter clientCustomerId";
+            throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
         queryParams.put("customerId", clientCustomerId);
@@ -48,15 +46,14 @@ public class OrderClient extends BaseClient {
     }
 
     public OrderData findByLegacyOrderId(String id, String lineItemsBefore, String lineItemsAfter)
-        throws BaseException, IOException, InterruptedException {
-        zeckoAccessToken = getZeckoAccessToken(zeckoAccessToken);
+        throws ZeckoException, IOException, InterruptedException {
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
         Map<String, String> queryParams = new HashMap<>();
         String routeUri = "";
 
         if (StringUtils.isEmpty(id)) {
-            String message = "Order ID can not be empty";
-            throw new BaseException(message, HttpStatus.BAD_REQUEST);
+            String message = "Missing required parameter orderId";
+            throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
         routeUri = String.format("/%s", id);

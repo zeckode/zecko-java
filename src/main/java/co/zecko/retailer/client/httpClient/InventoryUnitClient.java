@@ -2,11 +2,9 @@ package co.zecko.retailer.client.httpClient;
 
 import co.zecko.retailer.common.enums.HttpStatus;
 import co.zecko.retailer.common.pojo.InventoryUnitHistory.InventoryUnitHistoryResponse;
-import co.zecko.retailer.common.pojo.cart.CartCompleteRequest;
 import co.zecko.retailer.common.pojo.inventoryUnit.InventoryUnitParams;
 import co.zecko.retailer.common.pojo.inventoryUnit.InventoryUnitResponseWrapper;
-import co.zecko.retailer.common.pojo.order.OrderData;
-import co.zecko.retailer.exception.BaseException;
+import co.zecko.retailer.exception.ZeckoException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import org.apache.commons.lang3.StringUtils;
 
@@ -17,21 +15,20 @@ import java.util.Map;
 public class InventoryUnitClient extends BaseClient {
 
     static final String BASE_URI = "/retailer/v1/inventoryUnits";
-    String zeckoAccessToken;
+    final String zeckoAccessToken;
     public InventoryUnitClient(String zeckoAccessToken) {
         this.zeckoAccessToken = zeckoAccessToken;
     }
 
     public InventoryUnitHistoryResponse InventoryUnitHistoryResponse(String id)
-        throws InterruptedException, BaseException, IOException {
-        zeckoAccessToken = getZeckoAccessToken(zeckoAccessToken);
+        throws InterruptedException, ZeckoException, IOException {
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
         Map<String, String> queryParams = new HashMap<>();
         String routeUri = "";
 
         if (StringUtils.isEmpty(id)) {
-            String message = "Unit ID can not be empty";
-            throw new BaseException(message, HttpStatus.BAD_REQUEST);
+            String message = "Missing required parameter inventoryUnitId";
+            throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
         routeUri = String.format("/%s/track", id);
 
@@ -41,13 +38,12 @@ public class InventoryUnitClient extends BaseClient {
     }
 
     public InventoryUnitResponseWrapper cancelInventoryUnit(String id, InventoryUnitParams inventoryUnitParams)
-            throws BaseException, IOException, InterruptedException{
-        zeckoAccessToken = getZeckoAccessToken(zeckoAccessToken);
+            throws ZeckoException, IOException, InterruptedException{
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
         String routeUri = "";
         if (StringUtils.isEmpty(id)) {
-            String message = "Unit ID can not be empty";
-            throw new BaseException(message, HttpStatus.BAD_REQUEST);
+            String message = "Missing required parameter inventoryUnitId";
+            throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
         routeUri = String.format("/%s/cancel", id);
 
@@ -57,13 +53,12 @@ public class InventoryUnitClient extends BaseClient {
     }
 
     public InventoryUnitResponseWrapper returnInventoryUnit(String id, InventoryUnitParams inventoryUnitParams)
-            throws BaseException, IOException, InterruptedException{
-        zeckoAccessToken = getZeckoAccessToken(zeckoAccessToken);
+            throws ZeckoException, IOException, InterruptedException{
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
         String routeUri = "";
         if (StringUtils.isEmpty(id)) {
-            String message = "Unit ID can not be empty";
-            throw new BaseException(message, HttpStatus.BAD_REQUEST);
+            String message = "Missing required parameter inventoryUnitId";
+            throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
         routeUri = String.format("/%s/return", id);
 
@@ -73,13 +68,12 @@ public class InventoryUnitClient extends BaseClient {
     }
 
     public InventoryUnitResponseWrapper exchangeInventoryUnit(String id, InventoryUnitParams inventoryUnitParams)
-            throws BaseException, IOException, InterruptedException{
-        zeckoAccessToken = getZeckoAccessToken(zeckoAccessToken);
+            throws ZeckoException, IOException, InterruptedException{
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
         String routeUri = "";
         if (StringUtils.isEmpty(id)) {
-            String message = "Unit ID can not be empty";
-            throw new BaseException(message, HttpStatus.BAD_REQUEST);
+            String message = "Missing required parameter inventoryUnitId";
+            throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
         routeUri = String.format("/%s/exchange", id);
 

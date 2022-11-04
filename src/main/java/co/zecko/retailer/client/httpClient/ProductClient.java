@@ -3,7 +3,7 @@ package co.zecko.retailer.client.httpClient;
 import co.zecko.retailer.common.enums.HttpStatus;
 import co.zecko.retailer.common.pojo.product.ProductData;
 import co.zecko.retailer.common.pojo.product.ProductsData;
-import co.zecko.retailer.exception.BaseException;
+import co.zecko.retailer.exception.ZeckoException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
@@ -20,20 +20,18 @@ import static co.zecko.retailer.common.constant.Header.BEFORE_HEADER;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ProductClient extends BaseClient {
     static final String BASE_URI = "/retailer/v1/products";
-    String zeckoAccessToken;
+    final String zeckoAccessToken;
     public ProductClient(String zeckoAccessToken) {
         this.zeckoAccessToken = zeckoAccessToken;
     }
     public ProductsData findAll(String collectionId, String after, String before)
-            throws BaseException, IOException, InterruptedException {
-
-        zeckoAccessToken = getZeckoAccessToken(zeckoAccessToken);
+            throws ZeckoException, IOException, InterruptedException {
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
         Map<String, String> queryParams = new HashMap<>();
         String routeUri = "";
         String url = getUrl(BASE_URI + routeUri);
         if (ObjectUtils.isEmpty(collectionId)) {
-            throw new BaseException("Missing required argument 'collectionId'",
+            throw new ZeckoException("Missing required parameter collectionId",
                     HttpStatus.BAD_REQUEST);
         }
         if (!StringUtils.isEmpty(after)) {
@@ -47,15 +45,14 @@ public class ProductClient extends BaseClient {
         return get(url, queryParams, headers, new TypeReference<>() {});
     }
     public ProductData findById(String id, String imagesBefore, String imagesAfter, String variantsBefore, String variantsAfter,String metaFieldsBefore, String metaFieldsAfter)
-            throws BaseException, IOException, InterruptedException{
-        zeckoAccessToken = getZeckoAccessToken(zeckoAccessToken);
+            throws ZeckoException, IOException, InterruptedException{
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
         Map<String, String> queryParams = new HashMap<>();
         String routeUri = "";
 
         if (StringUtils.isEmpty(id)) {
             String message = "Product ID can not be empty";
-            throw new BaseException(message, HttpStatus.BAD_REQUEST);
+            throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
         if (!StringUtils.isEmpty(imagesBefore)) {
             queryParams.put("imageBefore", imagesBefore);

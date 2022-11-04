@@ -6,7 +6,7 @@ import static co.zecko.retailer.common.constant.Env.ZECKO_BASE_URL_ENV;
 import static co.zecko.retailer.common.constant.Header.ZECKO_ACCESS_TOKEN_HEADER;
 
 import co.zecko.retailer.common.enums.HttpStatus;
-import co.zecko.retailer.exception.BaseException;
+import co.zecko.retailer.exception.ZeckoException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
@@ -38,6 +38,7 @@ public abstract class BaseClient {
 
     final ObjectMapper objectMapper;
 
+
     public BaseClient() {
         try {
             threadCount = Integer.valueOf(System.getenv(ZECKO_CLIENT_THREAD_COUNT));
@@ -63,7 +64,6 @@ public abstract class BaseClient {
     public <RequestBody, ResponseBody> ResponseBody post(String url, RequestBody requestBody,
         Map<String, String> headers, TypeReference<ResponseBody> responseType)
         throws IOException, InterruptedException {
-
         headers.put("Content-Type","application/json");
         String requestBodyString = objectMapper.writeValueAsString(requestBody);
         HttpRequest httpRequest = getBaseRequest(url, headers).POST(
@@ -74,7 +74,6 @@ public abstract class BaseClient {
     public <RequestBody, ResponseBody> ResponseBody patch(String url, RequestBody requestBody,
         Map<String, String> headers, TypeReference<ResponseBody> responseType)
         throws IOException, InterruptedException {
-
         headers.put("Content-Type","application/json");
         String requestBodyString = objectMapper.writeValueAsString(requestBody);
         HttpRequest httpRequest = getBaseRequest(url, headers).method("PATCH",
@@ -90,7 +89,7 @@ public abstract class BaseClient {
         HttpRequest httpRequest = getBaseRequest(queryAppendedUrl, headers).DELETE().build();
         return request(httpRequest, responseType);
     }
-    public String getZeckoAccessToken(String zeckoAccessToken) throws BaseException {
+    public String getZeckoAccessToken(String zeckoAccessToken) throws ZeckoException {
         if (StringUtils.isEmpty(zeckoAccessToken)) {
             zeckoAccessToken = System.getenv(ZECKO_ACCESS_TOKEN_HEADER);
         }
@@ -99,14 +98,14 @@ public abstract class BaseClient {
             String message = String.format(
                 "Either pass zeckoAccessToken parameter or declare %S environment",
                 ZECKO_ACCESS_TOKEN_ENV);
-
-            throw new BaseException(message, HttpStatus.BAD_REQUEST);
+            throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
         return zeckoAccessToken;
     }
 
-    public Map<String, String> getBaseHeaders(String zeckoAccessToken) {
+    public Map<String, String> getBaseHeaders(String zeckoAccessToken) throws ZeckoException {
+        zeckoAccessToken = getZeckoAccessToken(zeckoAccessToken);
         Map<String, String> headers = new HashMap<>();
         headers.put(ZECKO_ACCESS_TOKEN_HEADER, zeckoAccessToken);
         return headers;

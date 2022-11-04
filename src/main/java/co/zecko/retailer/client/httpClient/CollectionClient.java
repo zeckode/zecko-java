@@ -6,7 +6,7 @@ import static co.zecko.retailer.common.constant.Header.BEFORE_HEADER;
 import co.zecko.retailer.common.enums.HttpStatus;
 import co.zecko.retailer.common.pojo.collection.CollectionData;
 import co.zecko.retailer.common.pojo.collection.CollectionsData;
-import co.zecko.retailer.exception.BaseException;
+import co.zecko.retailer.exception.ZeckoException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import java.io.IOException;
 import java.util.HashMap;
@@ -19,15 +19,14 @@ import org.apache.commons.lang3.StringUtils;
 public class CollectionClient extends BaseClient {
 
     static final String BASE_URI = "/retailer/v1/collections";
-    String zeckoAccessToken;
+    final String zeckoAccessToken;
     public CollectionClient(String zeckoAccessToken) {
         this.zeckoAccessToken = zeckoAccessToken;
     }
 
     public CollectionsData findAll(String after, String before)
-        throws BaseException, IOException, InterruptedException {
+        throws ZeckoException, IOException, InterruptedException {
 
-        zeckoAccessToken = getZeckoAccessToken(zeckoAccessToken);
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
         Map<String, String> queryParams = new HashMap<>();
         String routeUri = "";
@@ -45,15 +44,14 @@ public class CollectionClient extends BaseClient {
     }
 
     public CollectionData findById(String id)
-        throws BaseException, IOException, InterruptedException{
-        zeckoAccessToken = getZeckoAccessToken(zeckoAccessToken);
+        throws ZeckoException, IOException, InterruptedException{
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
         Map<String, String> queryParams = new HashMap<>();
         String routeUri = "";
 
         if (StringUtils.isEmpty(id)) {
-            String message = "Collection ID can not be empty";
-            throw new BaseException(message, HttpStatus.BAD_REQUEST);
+            String message = "Missing required parameter collectionId";
+            throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
         routeUri = String.format("/%s", id);
