@@ -29,7 +29,7 @@ public class OrderClient extends BaseClient {
         Map<String, String> queryParams = new HashMap<>();
         String routeUri = "";
         if (StringUtils.isEmpty(clientCustomerId)) {
-            String message = "Missing required parameter clientCustomerId";
+            String message = "Missing required parameter: clientCustomerId";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
@@ -52,7 +52,7 @@ public class OrderClient extends BaseClient {
         String routeUri = "";
 
         if (StringUtils.isEmpty(id)) {
-            String message = "Missing required parameter orderId";
+            String message = "Missing required parameter: orderId";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 

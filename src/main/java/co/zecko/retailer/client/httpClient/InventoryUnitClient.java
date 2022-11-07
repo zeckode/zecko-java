@@ -28,7 +28,7 @@ public class InventoryUnitClient extends BaseClient {
         String routeUri = "";
 
         if (StringUtils.isEmpty(id)) {
-            String message = "Missing required parameter id";
+            String message = "Missing required parameter: id";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
         routeUri = String.format("/%s/track", id);
@@ -43,12 +43,12 @@ public class InventoryUnitClient extends BaseClient {
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
         String routeUri = "";
         if (StringUtils.isEmpty(id)) {
-            String message = "Missing required parameter id";
+            String message = "Missing required parameter: id";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
         if(ObjectUtils.isEmpty(inventoryUnitParams)){
-            String message = "Missing required parameter inventoryUnitParams";
+            String message = "Missing required parameter: inventoryUnitParams";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
@@ -64,9 +64,15 @@ public class InventoryUnitClient extends BaseClient {
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
         String routeUri = "";
         if (StringUtils.isEmpty(id)) {
-            String message = "Missing required parameter inventoryUnitId";
+            String message = "Missing required parameter: inventoryUnitId";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
+
+        if(ObjectUtils.isEmpty(inventoryUnitParams)){
+            String message = "Missing required parameter: inventoryUnitParams";
+            throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
+        }
+
         routeUri = String.format("/%s/return", id);
 
         String url = getUrl(BASE_URI + routeUri);
@@ -79,9 +85,15 @@ public class InventoryUnitClient extends BaseClient {
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
         String routeUri = "";
         if (StringUtils.isEmpty(id)) {
-            String message = "Missing required parameter inventoryUnitId";
+            String message = "Missing required parameter: inventoryUnitId";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
+
+        if(ObjectUtils.isEmpty(inventoryUnitParams)){
+            String message = "Missing required parameter: inventoryUnitParams";
+            throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
+        }
+
         routeUri = String.format("/%s/exchange", id);
 
         String url = getUrl(BASE_URI + routeUri);

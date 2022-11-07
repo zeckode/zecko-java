@@ -31,7 +31,7 @@ public class ProductClient extends BaseClient {
         String routeUri = "";
         String url = getUrl(BASE_URI + routeUri);
         if (ObjectUtils.isEmpty(collectionId)) {
-            throw new ZeckoException("Missing required parameter collectionId",
+            throw new ZeckoException("Missing required parameter: collectionId",
                     HttpStatus.BAD_REQUEST);
         }
         if (!StringUtils.isEmpty(after)) {

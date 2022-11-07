@@ -50,7 +50,7 @@ public class CollectionClient extends BaseClient {
         String routeUri = "";
 
         if (StringUtils.isEmpty(id)) {
-            String message = "Missing required parameter id";
+            String message = "Missing required parameter: id";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 

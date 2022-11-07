@@ -30,7 +30,7 @@ public class CartClient extends BaseClient {
         String routeUri = "";
 
         if (StringUtils.isEmpty(clientCustomerId)) {
-            String message = "Missing required parameter clientCustomerId";
+            String message = "Missing required parameter: clientCustomerId";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
@@ -47,7 +47,7 @@ public class CartClient extends BaseClient {
         String url = getUrl(BASE_URI + routeUri);
 
         if(ObjectUtils.isEmpty(cartActionRequest)){
-            String message = "Missing required parameter cartActionRequest";
+            String message = "Missing required parameter: cartActionRequest";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
@@ -61,7 +61,7 @@ public class CartClient extends BaseClient {
         String url = getUrl(BASE_URI + routeUri);
 
         if(ObjectUtils.isEmpty(cartActionRequest)){
-            String message = "Missing required parameter cartActionRequest";
+            String message = "Missing required parameter: cartActionRequest";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
@@ -76,7 +76,7 @@ public class CartClient extends BaseClient {
         String url = getUrl(BASE_URI + routeUri);
 
         if(ObjectUtils.isEmpty(cartUpdateRequest)){
-            String message = "Missing required parameter cartUpdateRequest";
+            String message = "Missing required parameter: cartUpdateRequest";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
@@ -88,12 +88,12 @@ public class CartClient extends BaseClient {
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
 
         if(StringUtils.isEmpty(legacyDraftOrderId)){
-            String message = "Missing required parameter legacyDraftOrderId";
+            String message = "Missing required parameter: legacyDraftOrderId";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
         if(ObjectUtils.isEmpty(cartDiscountRequest)){
-            String message = "Missing required parameter cartDiscountRequest";
+            String message = "Missing required parameter: cartDiscountRequest";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
@@ -108,12 +108,12 @@ public class CartClient extends BaseClient {
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
 
         if(StringUtils.isEmpty(legacyDraftOrderId)){
-            String message = "Missing required parameter legacyDraftOrderId";
+            String message = "Missing required parameter: legacyDraftOrderId";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
         if(ObjectUtils.isEmpty(cartDiscountRequest)){
-            String message = "Missing required parameter cartDiscountRequest";
+            String message = "Missing required parameter: cartDiscountRequest";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
@@ -128,12 +128,12 @@ public class CartClient extends BaseClient {
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
 
         if(StringUtils.isEmpty(legacyDraftOrderId)){
-            String message = "Missing required parameter legacyDraftOrderId";
+            String message = "Missing required parameter: legacyDraftOrderId";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
         if(ObjectUtils.isEmpty(cartCompleteRequest)){
-            String message = "Missing required parameter cartCompleteRequest";
+            String message = "Missing required parameter: cartCompleteRequest";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
@@ -151,7 +151,7 @@ public class CartClient extends BaseClient {
         String url = getUrl(BASE_URI + routeUri);
 
         if (StringUtils.isEmpty(clientCustomerId)) {
-            String message = "Missing required parameter clientCustomerId";
+            String message = "Missing required parameter: clientCustomerId";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
         queryParams.put("customerId", clientCustomerId);
