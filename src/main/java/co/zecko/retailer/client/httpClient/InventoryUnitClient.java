@@ -64,7 +64,7 @@ public class InventoryUnitClient extends BaseClient {
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
         String routeUri = "";
         if (StringUtils.isEmpty(id)) {
-            String message = "Missing required parameter: inventoryUnitId";
+            String message = "Missing required parameter: id";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
@@ -85,7 +85,7 @@ public class InventoryUnitClient extends BaseClient {
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
         String routeUri = "";
         if (StringUtils.isEmpty(id)) {
-            String message = "Missing required parameter: inventoryUnitId";
+            String message = "Missing required parameter: id";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 

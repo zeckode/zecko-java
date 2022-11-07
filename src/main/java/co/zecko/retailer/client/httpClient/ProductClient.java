@@ -51,7 +51,7 @@ public class ProductClient extends BaseClient {
         String routeUri = "";
 
         if (StringUtils.isEmpty(id)) {
-            String message = "Product ID can not be empty";
+            String message = "Missing required parameter: id";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
         if (!StringUtils.isEmpty(imagesBefore)) {

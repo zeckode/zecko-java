@@ -72,13 +72,19 @@ public class CartClient extends BaseClient {
     public CartData update(String legacyDraftOrderId, CartUpdateRequest cartUpdateRequest)
             throws ZeckoException, IOException, InterruptedException{
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
-        String routeUri = String.format("/%s/update", legacyDraftOrderId);
-        String url = getUrl(BASE_URI + routeUri);
+
+        if(StringUtils.isEmpty(legacyDraftOrderId)){
+            String message = "Missing required parameter: legacyDraftOrderId";
+            throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
+        }
 
         if(ObjectUtils.isEmpty(cartUpdateRequest)){
             String message = "Missing required parameter: cartUpdateRequest";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
+
+        String routeUri = String.format("/%s/update", legacyDraftOrderId);
+        String url = getUrl(BASE_URI + routeUri);
 
         return patch(url, cartUpdateRequest, headers, new TypeReference<>() {});
     }
