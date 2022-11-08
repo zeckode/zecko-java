@@ -69,12 +69,12 @@ public class CartClient extends BaseClient {
     }
 
 
-    public CartData update(String legacyDraftOrderId, CartUpdateRequest cartUpdateRequest)
+    public CartData update(String id, CartUpdateRequest cartUpdateRequest)
             throws ZeckoException, IOException, InterruptedException{
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
 
-        if(StringUtils.isEmpty(legacyDraftOrderId)){
-            String message = "Missing required parameter: legacyDraftOrderId";
+        if(StringUtils.isEmpty(id)){
+            String message = "Missing required parameter: id";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
@@ -83,18 +83,18 @@ public class CartClient extends BaseClient {
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
-        String routeUri = String.format("/%s/update", legacyDraftOrderId);
+        String routeUri = String.format("/%s/update", id);
         String url = getUrl(BASE_URI + routeUri);
 
         return patch(url, cartUpdateRequest, headers, new TypeReference<>() {});
     }
 
-    public CartData addDiscount(String legacyDraftOrderId, CartDiscountRequest cartDiscountRequest)
+    public CartData addDiscount(String id, CartDiscountRequest cartDiscountRequest)
             throws ZeckoException, IOException, InterruptedException{
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
 
-        if(StringUtils.isEmpty(legacyDraftOrderId)){
-            String message = "Missing required parameter: legacyDraftOrderId";
+        if(StringUtils.isEmpty(id)){
+            String message = "Missing required parameter: id";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
@@ -103,18 +103,18 @@ public class CartClient extends BaseClient {
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
-        String routeUri = String.format("/%s/add-discount", legacyDraftOrderId);
+        String routeUri = String.format("/%s/add-discount", id);
         String url = getUrl(BASE_URI + routeUri);
 
         return patch(url, cartDiscountRequest, headers, new TypeReference<>() {});
     }
 
-    public CartData removeDiscount(String legacyDraftOrderId, CartDiscountRequest cartDiscountRequest)
+    public CartData removeDiscount(String id, CartDiscountRequest cartDiscountRequest)
             throws ZeckoException, IOException, InterruptedException{
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
 
-        if(StringUtils.isEmpty(legacyDraftOrderId)){
-            String message = "Missing required parameter: legacyDraftOrderId";
+        if(StringUtils.isEmpty(id)){
+            String message = "Missing required parameter: id";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
@@ -123,18 +123,18 @@ public class CartClient extends BaseClient {
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
-        String routeUri = String.format("/%s/remove-discount", legacyDraftOrderId);
+        String routeUri = String.format("/%s/remove-discount", id);
         String url = getUrl(BASE_URI + routeUri);
 
         return patch(url, cartDiscountRequest, headers, new TypeReference<>() {});
     }
 
-    public OrderData complete(String legacyDraftOrderId, CartCompleteRequest cartCompleteRequest)
+    public OrderData complete(String id, CartCompleteRequest cartCompleteRequest)
             throws ZeckoException, IOException, InterruptedException{
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
 
-        if(StringUtils.isEmpty(legacyDraftOrderId)){
-            String message = "Missing required parameter: legacyDraftOrderId";
+        if(StringUtils.isEmpty(id)){
+            String message = "Missing required parameter: id";
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
@@ -143,7 +143,7 @@ public class CartClient extends BaseClient {
             throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
         }
 
-        String routeUri = String.format("/%s/complete", legacyDraftOrderId);
+        String routeUri = String.format("/%s/complete", id);
         String url = getUrl(BASE_URI + routeUri);
 
         return post(url, cartCompleteRequest, headers, new TypeReference<>() {});
