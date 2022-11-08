@@ -1,7 +1,7 @@
-package co.zecko.retailer.common.pojo.base;
+package co.zecko.retailer.common.pojo.customer;
 
+import co.zecko.retailer.common.pojo.base.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -16,13 +16,11 @@ import lombok.experimental.FieldDefaults;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonInclude(Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ShopifyErrorEntry implements Serializable {
+public class CustomersData extends BaseEntry implements Serializable {
 
-    private static final long serialVersionUID = -8307940712006208211L;
+    private static final long serialVersionUID = -4997857115973857104L;
 
-    String message;
-
-    Extensions extensions;
+    CustomerEdgesWrapper data;
 }

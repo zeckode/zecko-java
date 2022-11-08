@@ -6,7 +6,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class BaseException extends Exception {
+public class ZeckoException extends Exception {
 
     String message;
 
@@ -14,22 +14,22 @@ public class BaseException extends Exception {
 
     Object details;
 
-    public BaseException(String message) {
+    public ZeckoException(String message) {
         this.httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
         this.message = message;
     }
 
-    public BaseException(String message, HttpStatus httpStatus) {
+    public ZeckoException(String message, HttpStatus httpStatus) {
         this.httpStatus = httpStatus;
         this.message = message;
     }
 
-    public BaseException(HttpStatus httpStatus) {
+    public ZeckoException(HttpStatus httpStatus) {
         this.httpStatus = httpStatus;
         this.message = httpStatus.getReasonPhrase();
     }
 
-    public BaseException() {
+    public ZeckoException() {
         this.httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
         this.message = HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase();
     }
