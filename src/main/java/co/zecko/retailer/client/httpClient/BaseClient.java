@@ -6,6 +6,7 @@ import static co.zecko.retailer.common.constant.Env.ZECKO_BASE_URL_ENV;
 import static co.zecko.retailer.common.constant.Header.ZECKO_ACCESS_TOKEN_HEADER;
 
 import co.zecko.retailer.common.enums.HttpStatus;
+import co.zecko.retailer.common.util.ObjectMapperUtil;
 import co.zecko.retailer.exception.ZeckoException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -48,7 +49,7 @@ public abstract class BaseClient {
 
         ExecutorService executorService = Executors.newFixedThreadPool(threadCount);
         this.httpClient = HttpClient.newBuilder().executor(executorService).build();
-        this.objectMapper = new ObjectMapper();
+        this.objectMapper = new ObjectMapperUtil().getObjectMapper();
     }
 
     public <ResponseBody> ResponseBody get(String url, Map<String, String> queryParams,
