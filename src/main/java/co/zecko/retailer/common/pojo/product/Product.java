@@ -7,6 +7,7 @@ import co.zecko.retailer.common.pojo.image.ImageEdges;
 import co.zecko.retailer.common.pojo.metaField.MetaFieldEdges;
 import co.zecko.retailer.common.pojo.platform.Platform;
 import co.zecko.retailer.common.pojo.price.PriceRange;
+import co.zecko.retailer.common.pojo.reviews.ReviewItems;
 import co.zecko.retailer.common.pojo.variant.VariantEdges;
 import co.zecko.retailer.common.util.DiscountUtil;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -80,6 +81,8 @@ public class Product extends BaseEntry implements Serializable {
     String vendor;
 
     MetaFieldEdges metafields;
+
+    ReviewItems reviews;
 
     public String getDiscountPercentage() {
         return DiscountUtil.getDiscountPercentage(getPrice(), getCompareAtPrice());
