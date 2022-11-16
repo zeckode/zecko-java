@@ -79,7 +79,7 @@ public class ProductClient extends BaseClient {
         return get(url, queryParams, headers, new TypeReference<>() {});
     }
 
-    public ProductData getRealTimeData(String id)
+    public ProductData getRealTime(String id)
         throws ZeckoException, IOException, InterruptedException {
         Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
         Map<String, String> queryParams = new HashMap<>();
