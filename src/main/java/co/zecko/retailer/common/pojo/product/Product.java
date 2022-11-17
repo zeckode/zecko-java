@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -72,6 +73,7 @@ public class Product extends BaseEntry implements Serializable {
 
     String noOfRatings;
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     Integer totalInventory;
 
     Integer totalVariants;
@@ -86,5 +88,9 @@ public class Product extends BaseEntry implements Serializable {
 
     public String getDiscountPercentage() {
         return DiscountUtil.getDiscountPercentage(getPrice(), getCompareAtPrice());
+    }
+
+    public Boolean getIsAvailable () {
+        return totalInventory > 0;
     }
 }
