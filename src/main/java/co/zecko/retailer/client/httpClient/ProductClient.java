@@ -78,4 +78,21 @@ public class ProductClient extends BaseClient {
 
         return get(url, queryParams, headers, new TypeReference<>() {});
     }
+
+    public ProductData getRealTime(String id)
+        throws ZeckoException, IOException, InterruptedException {
+        Map<String, String> headers = getBaseHeaders(zeckoAccessToken);
+        Map<String, String> queryParams = new HashMap<>();
+
+        if (StringUtils.isEmpty(id)) {
+            String message = "Missing required parameter: id";
+            throw new ZeckoException(message, HttpStatus.BAD_REQUEST);
+        }
+
+        String routeUri = String.format("/realtime/%s", id);
+
+        String url = getUrl(BASE_URI + routeUri);
+
+        return get(url, queryParams, headers, new TypeReference<>() {});
+    }
 }

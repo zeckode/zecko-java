@@ -7,12 +7,14 @@ import co.zecko.retailer.common.pojo.image.ImageEdges;
 import co.zecko.retailer.common.pojo.metaField.MetaFieldEdges;
 import co.zecko.retailer.common.pojo.platform.Platform;
 import co.zecko.retailer.common.pojo.price.PriceRange;
+import co.zecko.retailer.common.pojo.reviews.ReviewItems;
 import co.zecko.retailer.common.pojo.variant.VariantEdges;
 import co.zecko.retailer.common.util.DiscountUtil;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -71,6 +73,7 @@ public class Product extends BaseEntry implements Serializable {
 
     String noOfRatings;
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     Integer totalInventory;
 
     Integer totalVariants;
@@ -83,7 +86,13 @@ public class Product extends BaseEntry implements Serializable {
 
     PostOrderProductData postOrderProductData;
 
+    ReviewItems reviews;
+
     public String getDiscountPercentage() {
         return DiscountUtil.getDiscountPercentage(getPrice(), getCompareAtPrice());
+    }
+
+    public Boolean getIsAvailable () {
+        return totalInventory > 0;
     }
 }
