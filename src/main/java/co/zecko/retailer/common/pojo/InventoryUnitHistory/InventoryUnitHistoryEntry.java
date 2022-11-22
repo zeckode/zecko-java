@@ -2,9 +2,8 @@ package co.zecko.retailer.common.pojo.InventoryUnitHistory;
 
 import java.util.Date;
 
+import co.zecko.common.java.pojo.BaseDataBaseEntry;
 import co.zecko.retailer.common.enums.InventoryUnitStatus;
-import co.zecko.retailer.common.pojo.base.BaseDataBaseEntry;
-import co.zecko.retailer.common.pojo.base.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

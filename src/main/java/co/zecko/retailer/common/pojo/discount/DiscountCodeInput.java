@@ -1,7 +1,7 @@
 package co.zecko.retailer.common.pojo.discount;
 
 import co.zecko.retailer.common.enums.DiscountCodeType;
-import co.zecko.retailer.common.pojo.base.BaseEntry;
+import co.zecko.common.java.pojo.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
 import lombok.AccessLevel;

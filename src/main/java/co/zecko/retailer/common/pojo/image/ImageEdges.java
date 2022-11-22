@@ -1,7 +1,7 @@
 package co.zecko.retailer.common.pojo.image;
 
 import co.zecko.retailer.common.pojo.PageInfo;
-import co.zecko.retailer.common.pojo.base.BaseEntry;
+import co.zecko.common.java.pojo.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;

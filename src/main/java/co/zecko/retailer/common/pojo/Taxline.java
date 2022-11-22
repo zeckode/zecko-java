@@ -1,6 +1,6 @@
 package co.zecko.retailer.common.pojo;
 
-import co.zecko.retailer.common.pojo.base.BaseEntry;
+import co.zecko.common.java.pojo.BaseEntry;
 import co.zecko.retailer.common.pojo.money.MoneyBag;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;

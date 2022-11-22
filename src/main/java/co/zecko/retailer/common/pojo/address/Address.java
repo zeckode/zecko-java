@@ -1,7 +1,7 @@
 package co.zecko.retailer.common.pojo.address;
 
 import co.zecko.retailer.common.enums.CountryCode;
-import co.zecko.retailer.common.pojo.base.BaseEntry;
+import co.zecko.common.java.pojo.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;

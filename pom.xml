@@ -5,7 +5,7 @@
 
     <groupId>co.zecko.retailer</groupId>
     <artifactId>client</artifactId>
-    <version>0.0.5-RELEASE</version>
+    <version>0.0.6-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Zecko Client</name>
@@ -185,6 +185,11 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>co.zecko.common.java</groupId>
+            <artifactId>client</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>

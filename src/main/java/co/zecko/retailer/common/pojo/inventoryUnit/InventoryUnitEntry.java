@@ -1,8 +1,7 @@
 package co.zecko.retailer.common.pojo.inventoryUnit;
 
+import co.zecko.common.java.pojo.BaseDataBaseEntry;
 import co.zecko.retailer.common.enums.InventoryUnitStatus;
-import co.zecko.retailer.common.pojo.base.BaseDataBaseEntry;
-import co.zecko.retailer.common.pojo.base.BaseEntry;
 import co.zecko.retailer.common.pojo.lineItem.LineItem;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;

@@ -4,7 +4,7 @@ import co.zecko.retailer.common.pojo.UserError;
 import java.io.Serializable;
 import java.util.List;
 
-import co.zecko.retailer.common.pojo.base.BaseEntry;
+import co.zecko.common.java.pojo.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

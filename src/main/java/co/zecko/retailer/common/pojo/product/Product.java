@@ -1,7 +1,7 @@
 package co.zecko.retailer.common.pojo.product;
 
 import co.zecko.retailer.common.enums.ProductStatus;
-import co.zecko.retailer.common.pojo.base.BaseEntry;
+import co.zecko.common.java.pojo.BaseEntry;
 import co.zecko.retailer.common.pojo.image.Image;
 import co.zecko.retailer.common.pojo.image.ImageEdges;
 import co.zecko.retailer.common.pojo.metaField.MetaFieldEdges;
@@ -86,11 +86,15 @@ public class Product extends BaseEntry implements Serializable {
 
     ReviewItems reviews;
 
+    Boolean isAvailable;
+
     public String getDiscountPercentage() {
         return DiscountUtil.getDiscountPercentage(getPrice(), getCompareAtPrice());
     }
 
-    public Boolean getIsAvailable () {
-        return totalInventory > 0;
+    public Boolean getIsAvailable() {
+        if(totalInventory == null) return null;
+        this.isAvailable =  totalInventory > 0;
+        return this.isAvailable;
     }
 }
