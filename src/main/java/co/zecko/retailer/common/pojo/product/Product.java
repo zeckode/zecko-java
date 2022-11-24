@@ -84,6 +84,8 @@ public class Product extends BaseEntry implements Serializable {
 
     MetaFieldEdges metafields;
 
+    PostOrderProductData postOrderProductData;
+
     ReviewItems reviews;
 
     public String getDiscountPercentage() {
