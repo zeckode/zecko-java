@@ -1,7 +1,7 @@
 package co.zecko.retailer.common.pojo.product;
 
-import co.zecko.retailer.common.enums.ProductStatus;
 import co.zecko.common.java.pojo.BaseEntry;
+import co.zecko.retailer.common.enums.ProductStatus;
 import co.zecko.retailer.common.pojo.image.Image;
 import co.zecko.retailer.common.pojo.image.ImageEdges;
 import co.zecko.retailer.common.pojo.metaField.MetaFieldEdges;
@@ -83,6 +83,8 @@ public class Product extends BaseEntry implements Serializable {
     String vendor;
 
     MetaFieldEdges metafields;
+
+    PostOrderProductData postOrderProductData;
 
     ReviewItems reviews;
 
