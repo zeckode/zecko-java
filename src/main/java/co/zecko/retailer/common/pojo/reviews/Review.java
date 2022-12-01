@@ -24,4 +24,6 @@ public class Review implements Serializable {
     String summary;
 
     String body;
+
+    String occurredAt;
  }
