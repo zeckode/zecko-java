@@ -2,7 +2,7 @@ package co.zecko.retailer.common.pojo.order;
 
 import java.io.Serializable;
 
-import co.zecko.common.java.pojo.BaseEntry;
+import co.zecko.commonPublic.java.pojo.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

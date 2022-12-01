@@ -1,6 +1,6 @@
 package co.zecko.retailer.common.pojo.product;
 
-import co.zecko.common.java.pojo.BaseEntry;
+import co.zecko.commonPublic.java.pojo.BaseEntry;
 import co.zecko.retailer.common.enums.ProductStatus;
 import co.zecko.retailer.common.pojo.image.Image;
 import co.zecko.retailer.common.pojo.image.ImageEdges;
@@ -15,12 +15,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Getter

@@ -1,7 +1,7 @@
 package co.zecko.retailer.common.pojo.payment;
 
 import co.zecko.retailer.common.enums.PaymentTermsName;
-import co.zecko.common.java.pojo.BaseEntry;
+import co.zecko.commonPublic.java.pojo.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
 import lombok.AccessLevel;

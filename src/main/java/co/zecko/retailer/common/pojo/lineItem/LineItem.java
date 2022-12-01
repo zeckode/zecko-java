@@ -1,7 +1,7 @@
 package co.zecko.retailer.common.pojo.lineItem;
 
 import co.zecko.retailer.common.pojo.Discount;
-import co.zecko.common.java.pojo.BaseEntry;
+import co.zecko.commonPublic.java.pojo.BaseEntry;
 import co.zecko.retailer.common.pojo.image.Image;
 import co.zecko.retailer.common.pojo.inventoryUnit.InventoryUnitResponse;
 import co.zecko.retailer.common.pojo.product.Product;

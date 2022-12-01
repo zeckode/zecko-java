@@ -1,6 +1,6 @@
 package co.zecko.retailer.common.pojo.shipping;
 
-import co.zecko.common.java.pojo.BaseEntry;
+import co.zecko.commonPublic.java.pojo.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

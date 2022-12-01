@@ -5,7 +5,7 @@ import co.zecko.retailer.common.enums.DraftOrderStatus;
 import co.zecko.retailer.common.pojo.Discount;
 import co.zecko.retailer.common.pojo.Taxline;
 import co.zecko.retailer.common.pojo.address.Address;
-import co.zecko.common.java.pojo.BaseEntry;
+import co.zecko.commonPublic.java.pojo.BaseEntry;
 import co.zecko.retailer.common.pojo.lineItem.LineItemEdges;
 import co.zecko.retailer.common.pojo.order.Order;
 import co.zecko.retailer.common.pojo.shipping.AvailableShippingRate;

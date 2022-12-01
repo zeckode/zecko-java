@@ -1,7 +1,7 @@
 package co.zecko.retailer.common.pojo.inventoryUnit;
 
 import co.zecko.retailer.common.enums.InventoryUnitEvent;
-import co.zecko.common.java.pojo.BaseDataBaseEntry;
+import co.zecko.commonPublic.java.pojo.BaseDataBaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 import lombok.experimental.FieldDefaults;

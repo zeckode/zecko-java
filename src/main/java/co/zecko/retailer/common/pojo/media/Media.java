@@ -2,7 +2,7 @@ package co.zecko.retailer.common.pojo.media;
 
 import co.zecko.retailer.common.enums.MediaContentType;
 import co.zecko.retailer.common.enums.MediaStatus;
-import co.zecko.common.java.pojo.BaseEntry;
+import co.zecko.commonPublic.java.pojo.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;
