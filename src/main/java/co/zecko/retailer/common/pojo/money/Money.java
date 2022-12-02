@@ -1,7 +1,7 @@
 package co.zecko.retailer.common.pojo.money;
 
 import co.zecko.retailer.common.enums.CurrencyCode;
-import co.zecko.retailer.common.pojo.base.BaseEntry;
+import co.zecko.commonPublic.java.pojo.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;

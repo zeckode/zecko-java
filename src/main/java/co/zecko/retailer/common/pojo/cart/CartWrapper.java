@@ -2,7 +2,7 @@ package co.zecko.retailer.common.pojo.cart;
 
 
 import co.zecko.retailer.common.pojo.UserError;
-import co.zecko.retailer.common.pojo.base.BaseEntry;
+import co.zecko.commonPublic.java.pojo.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 import lombok.experimental.FieldDefaults;

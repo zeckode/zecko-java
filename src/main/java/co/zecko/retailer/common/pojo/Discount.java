@@ -1,7 +1,7 @@
 package co.zecko.retailer.common.pojo;
 
 import co.zecko.retailer.common.enums.DiscountType;
-import co.zecko.retailer.common.pojo.base.BaseEntry;
+import co.zecko.commonPublic.java.pojo.BaseEntry;
 import co.zecko.retailer.common.pojo.money.Money;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;

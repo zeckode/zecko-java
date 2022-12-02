@@ -1,7 +1,7 @@
 package co.zecko.retailer.common.pojo.order;
 
 import co.zecko.retailer.common.pojo.address.Address;
-import co.zecko.retailer.common.pojo.base.BaseEntry;
+import co.zecko.commonPublic.java.pojo.BaseEntry;
 import co.zecko.retailer.common.pojo.shipping.ShippingLine;
 import co.zecko.retailer.common.pojo.money.MoneyBag;
 import co.zecko.retailer.common.pojo.Taxline;

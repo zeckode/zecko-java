@@ -1,6 +1,6 @@
 package co.zecko.retailer.common.pojo.cart;
 
-import co.zecko.retailer.common.pojo.base.BaseEntry;
+import co.zecko.commonPublic.java.pojo.BaseEntry;
 import co.zecko.retailer.common.pojo.shipping.AvailableShippingRate;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;

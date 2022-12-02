@@ -1,7 +1,7 @@
 package co.zecko.retailer.common.pojo.variant;
 
 import co.zecko.retailer.common.pojo.SelectedOption;
-import co.zecko.retailer.common.pojo.base.BaseEntry;
+import co.zecko.commonPublic.java.pojo.BaseEntry;
 import co.zecko.retailer.common.pojo.image.Image;
 import co.zecko.retailer.common.pojo.product.Product;
 import co.zecko.retailer.common.util.DiscountUtil;

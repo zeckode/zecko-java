@@ -1,8 +1,7 @@
 package co.zecko.retailer.common.pojo.customer;
 
 import co.zecko.retailer.common.pojo.PageInfo;
-import co.zecko.retailer.common.pojo.base.BaseEntry;
-import co.zecko.retailer.common.pojo.collection.CollectionEdge;
+import co.zecko.commonPublic.java.pojo.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
 import java.util.List;

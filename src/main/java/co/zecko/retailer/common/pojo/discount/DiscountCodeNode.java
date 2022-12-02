@@ -1,7 +1,7 @@
 package co.zecko.retailer.common.pojo.discount;
 
 import co.zecko.retailer.common.enums.DiscountCodeNodeType;
-import co.zecko.retailer.common.pojo.base.BaseEntry;
+import co.zecko.commonPublic.java.pojo.BaseEntry;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
