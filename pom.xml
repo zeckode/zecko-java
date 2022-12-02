@@ -167,8 +167,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>co.zecko.commonPublic</groupId>
-            <artifactId>public</artifactId>
+            <groupId>co.zecko.retailer</groupId>
+            <artifactId>commonPublic</artifactId>
             <version>0.0.1-RELEASE</version>
         </dependency>
     </dependencies>
