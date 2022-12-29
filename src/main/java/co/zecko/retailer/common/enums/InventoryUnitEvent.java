@@ -12,6 +12,7 @@ public enum InventoryUnitEvent {
 
     DELIVER,
     MARK_FAILED_DELIVERY,
+    MARK_RETURN_TO_ORIGIN,
 
     REQUEST_RETURN,
     REQUEST_EXCHANGE,
