@@ -5,7 +5,7 @@
 
     <groupId>co.zecko.retailer</groupId>
     <artifactId>client</artifactId>
-    <version>0.0.9-RELEASE</version>
+    <version>0.0.10-RELEASE</version>
     <packaging>jar</packaging>
 
     <name>Zecko Client</name>
